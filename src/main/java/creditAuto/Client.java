@@ -11,5 +11,7 @@ public class Client {
 	private String lastname;
 	private String adresse;
 	private LocalDate birthday;
-
+	private int numeroContrat;
+	
+	// TO DO
 }
