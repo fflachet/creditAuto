@@ -48,6 +48,11 @@ public class Contract {
 	private Client client;
 	
 	// constructor
+	
+	public Contract() {
+		
+	}
+	
 	public Contract(Long id, int contractNumber, LocalDate paymentStartDate, LocalDate paymentEndDate,
 			LocalDate closureDate, BigDecimal purchaseAmount, BigDecimal loanTotalCost, int loanDuration,
 			VehicleCategory vehicleCategory, BigDecimal loanRate, Client client) {
