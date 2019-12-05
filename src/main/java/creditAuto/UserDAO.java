@@ -4,11 +4,13 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 @Repository
+@Transactional
 public class UserDAO extends JdbcRepository {
 	
 	@PersistenceContext
