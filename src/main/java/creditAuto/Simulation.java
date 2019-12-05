@@ -1,70 +1,91 @@
 package creditAuto;
 
+import java.math.BigDecimal;
+
 public class Simulation {
 	
-	private double buyPrice;
-	private double creditPrice;
-	private int creditDuration;
-	private char vehiculeCategori;
-	private double rate;
+	private BigDecimal purchaseAmount;
+	private BigDecimal loanAmount;
+	private int loanDuration;
+	private char vehicleCategory;
+	private BigDecimal loanRate;
+	private BigDecimal monthlyPayment;
+	private BigDecimal loanTotalCost;
 	
 	
 	// Constructor
 	public Simulation() {}
 	
-	public Simulation(double buyPrice, double creditPrice, int creditDuration, char vehiculeCategori, double rate) {
-		this.buyPrice = buyPrice;
-		this.creditPrice = creditPrice;
-		this.creditDuration = creditDuration;
-		this.vehiculeCategori = vehiculeCategori;
-		this.rate = rate;
+	public Simulation(BigDecimal purchaseAmount, BigDecimal loanAmount, int loanDuration, char vehicleCategory,
+			BigDecimal loanRate, BigDecimal monthlyPayment, BigDecimal loanTotalCost) {
+		super();
+		this.purchaseAmount = purchaseAmount;
+		this.loanAmount = loanAmount;
+		this.loanDuration = loanDuration;
+		this.vehicleCategory = vehicleCategory;
+		this.loanRate = loanRate;
+		this.monthlyPayment = monthlyPayment;
+		this.loanTotalCost = loanTotalCost;
 	}
 	
 	//getters/setters
 
-	public double getBuyPrice() {
-		return buyPrice;
+	public BigDecimal getPurchaseAmount() {
+		return purchaseAmount;
 	}
 
-	public void setBuyPrice(double buyPrice) {
-		this.buyPrice = buyPrice;
+	public void setPurchaseAmount(BigDecimal purchaseAmount) {
+		this.purchaseAmount = purchaseAmount;
 	}
 
-	public double getCreditPrice() {
-		return creditPrice;
+	public BigDecimal getLoanAmount() {
+		return loanAmount;
 	}
 
-	public void setCreditPrice(double creditPrice) {
-		this.creditPrice = creditPrice;
+	public void setLoanAmount(BigDecimal loanAmount) {
+		this.loanAmount = loanAmount;
 	}
 
-	public int getCreditDuration() {
-		return creditDuration;
+	public int getLoanDuration() {
+		return loanDuration;
 	}
 
-	public void setCreditDuration(int creditDuration) {
-		this.creditDuration = creditDuration;
+	public void setLoanDuration(int loanDuration) {
+		this.loanDuration = loanDuration;
 	}
 
-	public char getVehiculeCategori() {
-		return vehiculeCategori;
+	public char getVehicleCategory() {
+		return vehicleCategory;
 	}
 
-	public void setVehiculeCategori(char vehiculeCategori) {
-		this.vehiculeCategori = vehiculeCategori;
+	public void setVehicleCategory(char vehicleCategory) {
+		this.vehicleCategory = vehicleCategory;
 	}
 
-	public double getRate() {
-		return rate;
+	public BigDecimal getLoanRate() {
+		return loanRate;
 	}
 
-	public void setRate(double rate) {
-		this.rate = rate;
+	public void setLoanRate(BigDecimal loanRate) {
+		this.loanRate = loanRate;
+	}
+
+	public BigDecimal getMonthlyPayment() {
+		return monthlyPayment;
+	}
+
+	public void setMonthlyPayment(BigDecimal monthlyPayment) {
+		this.monthlyPayment = monthlyPayment;
+	}
+
+	public BigDecimal getLoanTotalCost() {
+		return loanTotalCost;
+	}
+
+	public void setLoanTotalCost(BigDecimal loanTotalCost) {
+		this.loanTotalCost = loanTotalCost;
 	}
 	
 
-	
-	
-	
 
 }
