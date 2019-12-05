@@ -2,14 +2,32 @@ package creditAuto;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Client {
+	
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Column
 	private String firstname;
+	@Column
 	private String lastname;
+	@Column
 	private String adresse;
+	@Column
 	private Date birthday;
+	@Column
 	private Genre genre;
+	@Column
 	private int numeroContrat;
+	
+	@OneToMany
 	private Contrat contrat;
 	
 	// Constructor
