@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 @Entity
-public class Contrat {
+public class Contract {
 	
 	@Id
 	@GeneratedValue
@@ -54,7 +54,7 @@ public class Contrat {
 	private List<Client> clientList;
 	
 	// constructor
-	public Contrat(Long id, int contractNumber, LocalDate paymentStartDate, LocalDate paymentEndDate,
+	public Contract(Long id, int contractNumber, LocalDate paymentStartDate, LocalDate paymentEndDate,
 			LocalDate closureDate, Client client, BigDecimal purchaseAmount, BigDecimal loanTotalCost, int loanDuration,
 			VehicleCategory vehicleCategory, BigDecimal loanRate) {
 		super();
@@ -71,7 +71,7 @@ public class Contrat {
 		this.loanRate = loanRate;
 	}
 
-	public Contrat(Long id, int contractNumber, LocalDate paymentStartDate, LocalDate paymentEndDate,
+	public Contract(Long id, int contractNumber, LocalDate paymentStartDate, LocalDate paymentEndDate,
 			LocalDate closureDate, Client client, BigDecimal purchaseAmount, BigDecimal loanTotalCost, int loanDuration,
 			VehicleCategory vehicleCategory, BigDecimal loanRate, List<Client> clientList) {
 		super();

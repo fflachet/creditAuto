@@ -1,6 +1,7 @@
 package creditAuto;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,35 +20,30 @@ public class Client {
 	@Column
 	private String lastname;
 	@Column
-	private String adresse;
+	private String adress;
 	@Column
-	private Date birthday;
+	private LocalDate birthDate;
 	@Column
-	private Genre genre;
-	@Column
-	private int numeroContrat;
+	private Gender gender;
+
 	
 	@OneToMany
-	private Contrat contrat;
+	private Contract contrat;
 	
 	// Constructor
 	public Client() {}
-	
-	public Client(Long id, String firstname, String lastname, String adresse, Date birthday, Genre genre,
-			int numeroContrat, Contrat contrat) {
-		super();
+
+	public Client(Long id, String firstname, String lastname, String adress, LocalDate birthDate, Gender gender,
+			Contract contrat) {
 		this.id = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
-		this.adresse = adresse;
-		this.birthday = birthday;
-		this.genre = genre;
-		this.numeroContrat = numeroContrat;
+		this.adress = adress;
+		this.birthDate = birthDate;
+		this.gender = gender;
 		this.contrat = contrat;
 	}
 
-	
-	//Getters/Setters
 	public Long getId() {
 		return id;
 	}
@@ -72,46 +68,43 @@ public class Client {
 		this.lastname = lastname;
 	}
 
-	public String getAdresse() {
-		return adresse;
+	public String getAdress() {
+		return adress;
 	}
 
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
+	public void setAdress(String adress) {
+		this.adress = adress;
 	}
 
-	public Date getBirthday() {
-		return birthday;
+	public LocalDate getBirthDate() {
+		return birthDate;
 	}
 
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
+	public void setBirthDate(LocalDate birthDate) {
+		this.birthDate = birthDate;
 	}
 
-	public Genre getGenre() {
-		return genre;
+	public Gender getGender() {
+		return gender;
 	}
 
-	public void setGenre(Genre genre) {
-		this.genre = genre;
+	public void setGender(Gender gender) {
+		this.gender = gender;
 	}
 
-	public int getNumeroContrat() {
-		return numeroContrat;
-	}
-
-	public void setNumeroContrat(int numeroContrat) {
-		this.numeroContrat = numeroContrat;
-	}
-
-	public Contrat getContrat() {
+	public Contract getContrat() {
 		return contrat;
 	}
 
-	public void setContrat(Contrat contrat) {
+	public void setContrat(Contract contrat) {
 		this.contrat = contrat;
 	}
 	
+	
+	
+	//Getters/Setters
+
+
 	
 	
 	
