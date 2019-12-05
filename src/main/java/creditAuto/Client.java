@@ -1,7 +1,8 @@
 package creditAuto;
 
 import java.time.LocalDate;
-
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,21 +28,21 @@ public class Client {
 	private Gender gender;
 
 	
-	@OneToMany
-	private Contract contrat;
+	@OneToMany(mappedBy = "client")
+	private List<Contract> contractList = new ArrayList<>();
 	
 	// Constructor
 	public Client() {}
 
 	public Client(Long id, String firstname, String lastname, String adress, LocalDate birthDate, Gender gender,
-			Contract contrat) {
+			List<Contract> contrat) {
 		this.id = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.adress = adress;
 		this.birthDate = birthDate;
 		this.gender = gender;
-		this.contrat = contrat;
+		this.contractList = contrat;
 	}
 
 	public Long getId() {
@@ -92,12 +93,12 @@ public class Client {
 		this.gender = gender;
 	}
 
-	public Contract getContrat() {
-		return contrat;
+	public List<Contract> getContrat() {
+		return contractList;
 	}
 
-	public void setContrat(Contract contrat) {
-		this.contrat = contrat;
+	public void setContrat(List<Contract> contrat) {
+		this.contractList = contrat;
 	}
 	
 	
