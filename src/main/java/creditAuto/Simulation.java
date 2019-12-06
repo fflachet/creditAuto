@@ -24,17 +24,6 @@ public class Simulation {
 		this.vehicleCategory = vehicleCategory;
 	}
 	
-	public Simulation(BigDecimal purchaseAmount, BigDecimal loanAmount) {
-		super();
-		this.purchaseAmount = purchaseAmount;
-		this.loanAmount = loanAmount;
-		//this.loanDuration = loanDuration;
-		//this.vehicleCategory = vehicleCategory;
-	}
-
-
-
-
 	public Simulation(BigDecimal purchaseAmount, BigDecimal loanAmount, int loanDuration, VehicleCategory vehicleCategory,
 			BigDecimal loanRate, BigDecimal monthlyPayment, BigDecimal loanTotalCost) {
 		super();

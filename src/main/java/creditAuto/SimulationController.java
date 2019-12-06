@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
+//@CrossOrigin(origins="*")
 public class SimulationController {
 	
 	@Autowired
@@ -44,9 +45,10 @@ public class SimulationController {
 //	}
 	
 	@RequestMapping(value = "/simulation", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void getSimulation(@RequestBody Simulation newSimul) {
+	public BigDecimal getSimulation(@RequestBody Simulation newSimul) {
 		System.out.println("getSimulation");
 		newSimulService.createSimul(newSimul.getPurchaseAmount(), newSimul.getLoanAmount(), newSimul.getLoanDuration(), newSimul.getVehicleCategory());
+		return newSimul.getLoanAmount();
 	}
 	
 	
