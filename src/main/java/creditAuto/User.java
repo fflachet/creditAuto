@@ -26,14 +26,15 @@ public class User {
 	@Column
 	private String password;
 	
+	private Role roleObject;
+	
 	@Column
-	private Role role;
+	private int role;
 
 	
 	public User() {}
 	
-	public User(Long id, String userFirstname, String userLastname, String login, String password, Role role) {
-		super();
+	public User(Long id, String userFirstname, String userLastname, String login, String password, int role) {
 		Id = id;
 		this.userFirstname = userFirstname;
 		this.userLastname = userLastname;
@@ -82,12 +83,12 @@ public class User {
 		this.password = password;
 	}
 
-	public Role getRole() {
+	public int getRole() {
 		return role;
 	}
 
-	public void setRole(Role role) {
-		this.role = role;
+	public void setRole(Role roleObject) {
+		this.role = roleObject.getRole();
 	}
 	
 

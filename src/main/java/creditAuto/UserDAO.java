@@ -28,5 +28,7 @@ public class UserDAO extends JdbcRepository {
 		return this.jdbcTemplate.query("select * from user_", new UserMapper());
 	}
 	
+	// TO DO findById / findByName?/ Remove/ Update
+	
 
 }

@@ -16,9 +16,11 @@ public class InitializeDb {
 		User user1 = new User();
 		user1.setLogin("test");
 		user1.setUserFirstname("steve");
-		user1.setPassword("bobby");
-		
+		user1.setUserLastname("Rogers");
+		user1.setPassword("admin");
+		user1.setRole(Role.ADMIN);
 		udao.persist(user1);
+		
 	}
 
 }
