@@ -45,10 +45,13 @@ public class SimulationController {
 //	}
 	
 	@RequestMapping(value = "/simulation", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public BigDecimal getSimulation(@RequestBody Simulation newSimul) {
+	public Simulation getSimulation(@RequestBody Simulation newSimul) {
 		System.out.println("getSimulation");
 		newSimulService.createSimul(newSimul.getPurchaseAmount(), newSimul.getLoanAmount(), newSimul.getLoanDuration(), newSimul.getVehicleCategory());
-		return newSimul.getLoanAmount();
+		newSimul.setLoanRate(new BigDecimal(2));
+		newSimul.setMonthlyPayment(new BigDecimal(350));
+		newSimul.setLoanTotalCost(new BigDecimal(15000));
+		return newSimul;
 	}
 	
 	
