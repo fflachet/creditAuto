@@ -28,16 +28,25 @@ public class SimulationController {
 //		newSimulService.createSimul(newSimul.getPurchaseAmount(), newSimul.getLoanAmount(), newSimul.getLoanDuration(), newSimul.getVehicleCategory());
 //	}
 	
-	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	//@ResponseStatus(value=HttpStatus.CREATED)
-	public BigDecimal sendBackRate2Front(@RequestBody Simulation newSimul) {
-		return newSimulService.sendBackRate(newSimul);
-	}
+//	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+//	//@ResponseStatus(value=HttpStatus.CREATED)
+//	public BigDecimal sendBackRate2Front(@RequestBody Simulation newSimul) {
+//		return newSimulService.sendBackRate(newSimul);
+//	}
 	
-	@GetMapping
+	//@GetMapping
+	//@RequestMapping(value = "/simulation", method = RequestMethod.GET)
 	//@ResponseStatus(value=HttpStatus.CREATED)
-	public Simulation sendBacwdfgwdsfg2Front() {
-		return new Simulation(BigDecimal.ONE, BigDecimal.ONE, 24, VehicleCategory.A);
+//	@RequestMapping(value = "/simulation", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public Simulation getSimulation(@RequestBody BigDecimal purchaseAmount, BigDecimal loanAmount) {
+//		System.out.println("getSimulation");
+//		return new Simulation(purchaseAmount, loanAmount);
+//	}
+	
+	@RequestMapping(value = "/simulation", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void getSimulation(@RequestBody Simulation newSimul) {
+		System.out.println("getSimulation");
+		newSimulService.createSimul(newSimul.getPurchaseAmount(), newSimul.getLoanAmount(), newSimul.getLoanDuration(), newSimul.getVehicleCategory());
 	}
 	
 	

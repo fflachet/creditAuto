@@ -20,6 +20,7 @@ public class SimulationService {
 	
 	public void createSimul(BigDecimal purchaseAmount, BigDecimal loanAmount, int loanDuration, VehicleCategory vehicleCategory) { 
 		newSimul= new Simulation(purchaseAmount, loanAmount, loanDuration, vehicleCategory);
+		System.out.println(newSimul);
 		//listSimul.add(newSimul);
 		
 	}
