@@ -7,7 +7,7 @@ public class Simulation {
 	private BigDecimal purchaseAmount;
 	private BigDecimal loanAmount;
 	private int loanDuration;
-	private char vehicleCategory;
+	private VehicleCategory vehicleCategory;
 	private BigDecimal loanRate;
 	private BigDecimal monthlyPayment;
 	private BigDecimal loanTotalCost;
@@ -16,7 +16,14 @@ public class Simulation {
 	// Constructor
 	public Simulation() {}
 	
-	public Simulation(BigDecimal purchaseAmount, BigDecimal loanAmount, int loanDuration, char vehicleCategory,
+	public Simulation(BigDecimal purchaseAmount, BigDecimal loanAmount, int loanDuration, VehicleCategory vehicleCategory) {
+		this.purchaseAmount = purchaseAmount;
+		this.loanAmount = loanAmount;
+		this.loanDuration = loanDuration;
+		this.vehicleCategory = vehicleCategory;
+	}
+	
+	public Simulation(BigDecimal purchaseAmount, BigDecimal loanAmount, int loanDuration, VehicleCategory vehicleCategory,
 			BigDecimal loanRate, BigDecimal monthlyPayment, BigDecimal loanTotalCost) {
 		super();
 		this.purchaseAmount = purchaseAmount;
@@ -54,11 +61,11 @@ public class Simulation {
 		this.loanDuration = loanDuration;
 	}
 
-	public char getVehicleCategory() {
+	public VehicleCategory getVehicleCategory() {
 		return vehicleCategory;
 	}
 
-	public void setVehicleCategory(char vehicleCategory) {
+	public void setVehicleCategory(VehicleCategory vehicleCategory) {
 		this.vehicleCategory = vehicleCategory;
 	}
 

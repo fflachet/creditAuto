@@ -34,8 +34,8 @@ public class SimulationService {
 		
 	}
 	*/
-	public void deleteSimul(Long id) { 
-		if 
-	}
+//	public void deleteSimul(Long id) { 
+//		if 
+//	}
 
 }
