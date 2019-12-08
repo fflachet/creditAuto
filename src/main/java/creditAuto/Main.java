@@ -14,13 +14,10 @@ public class Main {
 	public static void main(String[] args) {
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
 		System.out.println("Context loaded !");
-		
-//		Simulation simulation = new Simulation(new BigDecimal(2), new BigDecimal(2), 12, VehicleCategory.A);
-//		RateCalculations rate = new RateCalculations();
-//		
-//		rate.applyRateAndCalculateTotalCost(simulation);
-//		
-//		System.out.println(simulation);
+
+        Simulation simu = new Simulation(BigDecimal.valueOf(9000),BigDecimal.valueOf(7500),28, VehicleCategory.A);
+        RateCalculations.applyRateAndCalculateTotalCost(simu);
+        RateCalculations.newValuesFromProductOwnerCalculateTotalCost(simu);
 		
 	}
 

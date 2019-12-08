@@ -13,9 +13,11 @@ public class SimulationService {
 	
 	private List<Simulation> listSimul;
 	
-	private BigDecimal rateCalculation(Simulation simul) {
-		BigDecimal rateValue = BigDecimal.valueOf(0);
-		return rateValue;
+	private void rateCalculation(Simulation simul) {
+		RateCalculations.applyRateAndCalculateTotalCost(simul);
+        RateCalculations.newValuesFromProductOwnerCalculateTotalCost(simul);
+		//BigDecimal rateValue = BigDecimal.valueOf(0);
+		//return rateValue;
 	}
 	
 	public void createSimul(BigDecimal purchaseAmount, BigDecimal loanAmount, int loanDuration, VehicleCategory vehicleCategory) { 
@@ -25,18 +27,8 @@ public class SimulationService {
 		
 	}
 	
-	public BigDecimal sendBackRate(Simulation newSimul) {
-		BigDecimal rateValue=rateCalculation(newSimul);
-		return rateValue;
+	public void sendBackRate(Simulation newSimul) {
+		rateCalculation(newSimul);
+		//return rateValue;
 	}
-/*
-	public Simulation findSimul(Long id) { 
-		return userRepository.findById(id);
-		
-	}
-	*/
-	/*public void deleteSimul(Long id) { 
-		if 
-	}*/
-
 }

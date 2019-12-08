@@ -16,8 +16,7 @@ public class Rate {
 	
 	@Column
 	private BigDecimal rateValue;
-	
-	
+
 	// Constructor
 	public Rate() {
 		
