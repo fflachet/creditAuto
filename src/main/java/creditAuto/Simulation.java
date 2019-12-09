@@ -17,6 +17,7 @@ public class Simulation {
 	public Simulation() {}
 	
 	public Simulation(BigDecimal purchaseAmount, BigDecimal loanAmount, int loanDuration, VehicleCategory vehicleCategory) {
+		super();
 		this.purchaseAmount = purchaseAmount;
 		this.loanAmount = loanAmount;
 		this.loanDuration = loanDuration;
@@ -91,6 +92,13 @@ public class Simulation {
 
 	public void setLoanTotalCost(BigDecimal loanTotalCost) {
 		this.loanTotalCost = loanTotalCost;
+	}
+
+	@Override
+	public String toString() {
+		return "Simulation [purchaseAmount=" + purchaseAmount + ", loanAmount=" + loanAmount + ", loanDuration="
+				+ loanDuration + ", vehicleCategory=" + vehicleCategory + ", loanRate=" + loanRate + ", monthlyPayment="
+				+ monthlyPayment + ", loanTotalCost=" + loanTotalCost + "]";
 	}
 	
 

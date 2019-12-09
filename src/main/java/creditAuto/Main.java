@@ -17,11 +17,12 @@ public class Main {
 		
 		Simulation simu = new Simulation(BigDecimal.valueOf(13500),BigDecimal.valueOf(10000),28, VehicleCategory.A);
 		
-		RateCalculations.applyRateAndCalculateTotalCost(simu);
-		//RateCalculations.newValuesFromProductOwnerCalculateTotalCost(simu);
-		System.out.println(" Mensualité : " + simu.getMonthlyPayment());
-		System.out.println(" Taux  périodique : " + simu.getLoanRate());
-		System.out.println(" Cout du crédit : " + simu.getLoanTotalCost());
+//		Simulation simulation = new Simulation(new BigDecimal(2), new BigDecimal(2), 12, VehicleCategory.A);
+//		RateCalculations rate = new RateCalculations();
+//		
+//		rate.applyRateAndCalculateTotalCost(simulation);
+//		
+//		System.out.println(simulation);
 		
 	}
 
