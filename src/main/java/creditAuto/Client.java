@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -24,6 +26,8 @@ public class Client {
 	private String adress;
 	@Column
 	private LocalDate birthDate;
+	
+	@Enumerated(EnumType.STRING)
 	@Column
 	private Gender gender;
 

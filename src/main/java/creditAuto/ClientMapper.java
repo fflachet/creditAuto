@@ -13,7 +13,7 @@ public final class ClientMapper implements RowMapper<Client>{
         Client clientTemp = new Client();
         clientTemp.setLastname(rs.getString("lastname"));
         clientTemp.setFirstname(rs.getString("firstname"));
-        clientTemp.setGender(rs.getInt("gender") == 1 ? Gender.MALE : Gender.FEMALE);
+        clientTemp.setGender(rs.getString("gender") ==  "MALE" ? Gender.MALE : Gender.FEMALE);
         clientTemp.setAdress(rs.getString("adress"));
         clientTemp.setId(rs.getLong("id"));
         clientTemp.setAdress(rs.getString("adress"));

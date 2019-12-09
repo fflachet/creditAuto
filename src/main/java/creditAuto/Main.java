@@ -15,9 +15,9 @@ public class Main {
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
 		System.out.println("Context loaded !");
 
-        Simulation simu = new Simulation(BigDecimal.valueOf(9000),BigDecimal.valueOf(7500),28, VehicleCategory.A);
+        /*Simulation simu = new Simulation(BigDecimal.valueOf(9000),BigDecimal.valueOf(7500),28, VehicleCategory.A);
         RateCalculations.applyRateAndCalculateTotalCost(simu);
-        RateCalculations.newValuesFromProductOwnerCalculateTotalCost(simu);
+        RateCalculations.newValuesFromProductOwnerCalculateTotalCost(simu);*/
 		
 	}
 
