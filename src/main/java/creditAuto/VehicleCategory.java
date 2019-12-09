@@ -1,7 +1,9 @@
 package creditAuto;
 
 public enum VehicleCategory {
-	A,
-	B
+	A(1),
+	B(2);
+	
+	VehicleCategory(int i){	}
 
 }

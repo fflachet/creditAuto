@@ -1,6 +1,10 @@
 package creditAuto;
 
 public enum Gender {
-	MALE,
-	FEMALE
+	MALE(1),
+	FEMALE(2);
+	
+	Gender(int i) {
+	}
+	
 }
