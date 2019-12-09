@@ -59,7 +59,7 @@ public class InitializeDb {
 		client1.setLastname("garnier");
 		client1.setGender(Gender.MALE);
 		
-		client1.setContrat(cdao.findByClientId(client1.getId()));
+		//client1.setContrat(cdao.findByClientId(client1.getId()));
 		
 		Contract contrat = new Contract();
 		contrat.setClosureDate(LocalDate.of(2019, 12, 31));
@@ -67,9 +67,11 @@ public class InitializeDb {
 		contrat.setPaymentEndDate(LocalDate.of(2019, 12, 31));
 		contrat.setVehicleCategory(VehicleCategory.A);
 		contrat.setContractNumber(1);
-			
+		
+		cldao.persist(client1);	
+		contrat.setClient(client1);
 		cdao.persist(contrat);
-		cldao.persist(client1);
+		
 		
 		
 		

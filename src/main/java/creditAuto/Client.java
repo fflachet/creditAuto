@@ -27,6 +27,9 @@ public class Client {
 	@Column
 	private LocalDate birthDate;
 	
+	@Column
+	private String email;
+	
 	@Enumerated(EnumType.STRING)
 	@Column
 	private Gender gender;
@@ -39,7 +42,7 @@ public class Client {
 	public Client() {}
 
 	public Client(Long id, String firstname, String lastname, String adress, LocalDate birthDate, Gender gender,
-			List<Contract> contrat) {
+			List<Contract> contrat, String email) {
 		this.id = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -47,6 +50,7 @@ public class Client {
 		this.birthDate = birthDate;
 		this.gender = gender;
 		this.contractList = contrat;
+		this.email = email;
 	}
 
 	public Long getId() {
