@@ -15,10 +15,13 @@ public class Main {
 //		AbstractApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
 //		System.out.println("Context loaded !");
 		
-		Simulation simu = new Simulation(BigDecimal.valueOf(13500),BigDecimal.valueOf(7500),28, VehicleCategory.A);
-		RateCalculations.applyRateAndCalculateTotalCost(simu);
-		RateCalculations.newValuesFromProductOwnerCalculateTotalCost(simu);
+		Simulation simu = new Simulation(BigDecimal.valueOf(13500),BigDecimal.valueOf(10000),28, VehicleCategory.A);
 		
+		RateCalculations.applyRateAndCalculateTotalCost(simu);
+		//RateCalculations.newValuesFromProductOwnerCalculateTotalCost(simu);
+		System.out.println(" Mensualité : " + simu.getMonthlyPayment());
+		System.out.println(" Taux  périodique : " + simu.getLoanRate());
+		System.out.println(" Cout du crédit : " + simu.getLoanTotalCost());
 		
 	}
 
