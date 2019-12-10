@@ -17,13 +17,13 @@ public class Client {
 	@GeneratedValue
 	private Long id;
 	@Column
-	private String firstname;
+	private String firstName;
 	@Column
-	private String lastname;
+	private String lastName;
 	@Column
 	private String adress;
 	@Column
-	private LocalDate birthDate;
+	private String birthDate;
 	@Column
 	private Gender gender;
 
@@ -34,15 +34,24 @@ public class Client {
 	// Constructor
 	public Client() {}
 
-	public Client(Long id, String firstname, String lastname, String adress, LocalDate birthDate, Gender gender,
+	public Client(Long id, String firstName, String lastName, String adress, String birthDate, Gender gender,
 			List<Contract> contrat) {
 		this.id = id;
-		this.firstname = firstname;
-		this.lastname = lastname;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.adress = adress;
 		this.birthDate = birthDate;
 		this.gender = gender;
 		this.contractList = contrat;
+	}
+	
+	public Client(String firstName, String lastName, String adress, String birthDate, Gender gender) {
+
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.adress = adress;
+		this.birthDate = birthDate;
+		this.gender = gender;
 	}
 
 	public Long getId() {
@@ -53,20 +62,20 @@ public class Client {
 		this.id = id;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getAdress() {
@@ -77,11 +86,11 @@ public class Client {
 		this.adress = adress;
 	}
 
-	public LocalDate getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(LocalDate birthDate) {
+	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -99,6 +108,12 @@ public class Client {
 
 	public void setContrat(List<Contract> contrat) {
 		this.contractList = contrat;
+	}
+
+	@Override
+	public String toString() {
+		return "Client [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", adress=" + adress
+				+ ", birthDate=" + birthDate + ", gender=" + gender + ", contractList=" + contractList + "]";
 	}
 	
 	
