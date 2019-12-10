@@ -37,5 +37,9 @@ public class ClientDAO extends JdbcDataSource {
 		// return id;
 		 
 	}
+	
+	public Client findByEmail(String email) {
+		 return this.jdbcTemplate.queryForObject("select * from client where client.email = ?", new Object[] {email}, new ClientMapper());
+	}
 
 }

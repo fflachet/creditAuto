@@ -23,6 +23,11 @@ public class ClientService {
 		
 	}
 	
+	public Client find(String email) {
+		Client c = clientD.findByEmail(email);
+		return c;
+	}
+	
 	
 
 }

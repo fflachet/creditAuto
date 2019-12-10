@@ -8,7 +8,9 @@ import org.springframework.stereotype.Component;
 import creditAuto.dao.ClientDAO;
 import creditAuto.dao.ContractDAO;
 import creditAuto.dao.RateDAO;
+import creditAuto.model.Client;
 import creditAuto.model.Contract;
+import creditAuto.model.Gender;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -60,10 +62,12 @@ public class InitializeDb {
         }*/
 //		Client client1 = new Client();
 //		client1.setAdress("blabalalallalalala");
-//		client1.setBirthDate(LocalDate.of(1984, 7, 7));
-//		client1.setFirstname("georges");
-//		client1.setLastname("garnier");
+//		client1.setBirthDate("12-12-1212");
+//		client1.setFirstName("georges");
+//		client1.setLastName("garnier");
 //		client1.setGender(Gender.MALE);
+//		client1.setEmail("gegege@gmailcom");
+//		cldao.persist(client1);
 //		
 //		
 //		Contract contrat = new Contract();
@@ -102,6 +106,9 @@ public class InitializeDb {
 //		System.out.println(ctest);
 		Map<Integer, Contract> contrat = cdao.findByClientId(1l);
 		System.out.println(contrat);
+		
+		Client c1 = cldao.findByEmail("gegege@gmailcom");
+		System.out.println(c1);
 	}
 
 }

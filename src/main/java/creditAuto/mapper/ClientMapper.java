@@ -19,7 +19,7 @@ public final class ClientMapper implements RowMapper<Client>{
         clientTemp.setGender(rs.getString("gender") ==  "MALE" ? Gender.MALE : Gender.FEMALE);
         clientTemp.setAdress(rs.getString("adress"));
         clientTemp.setId(rs.getLong("id"));
-        clientTemp.setAdress(rs.getString("adress"));
+        clientTemp.setAdress(rs.getString("email"));
         
         // get the client contracts list find by client_id
        // clientTemp.setContrat(new ContractDAO().findByClientId(clientTemp.getId()));

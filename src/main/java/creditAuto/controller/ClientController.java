@@ -29,12 +29,21 @@ import creditAuto.services.ClientService;
 		@RequestMapping(value = "/nouveauClient", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 		public Client getClient(@RequestBody Client client) {
 			
-//			System.out.println("getClient");
-//			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//			LocalDate birthClient = LocalDate.parse(client.getBirthDate().toString(), formatter);
 			System.out.println(client +" controller ");
 			clientService.createClient(client.getFirstName(), client.getLastName(), client.getAdress(), client.getEmail(), client.getBirthDate() , client.getGender());	
 			return client;
+		}
+		
+		@RequestMapping(value = "/searchclient", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
+		public Client findByEmail(String email) throws Exception {
+			Client c2 = null;
+			try {
+				c2 = clientService.find(email);
+			}catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
+			return c2;
+			
 		}
 		
 	
