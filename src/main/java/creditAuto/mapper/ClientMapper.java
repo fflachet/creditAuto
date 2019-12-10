@@ -2,6 +2,8 @@ package creditAuto.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
@@ -19,8 +21,13 @@ public final class ClientMapper implements RowMapper<Client>{
         clientTemp.setGender(rs.getString("gender") ==  "MALE" ? Gender.MALE : Gender.FEMALE);
         clientTemp.setAdress(rs.getString("adress"));
         clientTemp.setId(rs.getLong("id"));
-        clientTemp.setAdress(rs.getString("email"));
-        
+        clientTemp.setEmail(rs.getString("email"));
+//        String date = rs.getString("birthdate");
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern
+//        LocalDate d = LocalDate.parse(date);
+//        clientTemp.setBirthDate(d);
+        System.out.println(rs.getString("birthdate"));
+        clientTemp.setBirthDate(rs.getString("birthdate"));
         // get the client contracts list find by client_id
        // clientTemp.setContrat(new ContractDAO().findByClientId(clientTemp.getId()));
         return clientTemp;
