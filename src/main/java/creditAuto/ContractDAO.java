@@ -1,6 +1,7 @@
 package creditAuto;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,7 +29,7 @@ public class ContractDAO extends JdbcRepository {
         return this.jdbcTemplate.query("select * from contract", new ContractMapper());
     }
 
-	public List<Contract> findByClientId(Long long1) {
-		return this.jdbcTemplate.query("select * from contract where client_id = ?",new Object[] {long1}, new ContractMapper());
+	public Map<Integer, Contract> findByClientId(Long long1) {
+		return this.jdbcTemplate.query("select * from contract join client on contract.client_id = client.id where contract.client_id = ?",new Object[] {long1}, new ContractAndClientMapExtractor());
 	}
 }

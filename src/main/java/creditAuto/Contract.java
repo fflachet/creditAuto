@@ -72,7 +72,8 @@ public class Contract {
 		this.loanRate = loanRate;
 		this.client = client;
 	}
-
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -159,6 +160,14 @@ public class Contract {
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+
+	@Override
+	public String toString() {
+		return "Contract [id=" + id + ", contractNumber=" + contractNumber + ", paymentStartDate=" + paymentStartDate
+				+ ", paymentEndDate=" + paymentEndDate + ", closureDate=" + closureDate + ", purchaseAmount="
+				+ purchaseAmount + ", loanTotalCost=" + loanTotalCost + ", loanDuration=" + loanDuration
+				+ ", vehicleCategory=" + vehicleCategory + ", loanRate=" + loanRate + ", client=" + client + "]";
 	}
 
 	

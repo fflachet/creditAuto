@@ -108,6 +108,13 @@ public class Client {
 	public void setContrat(List<Contract> contrat) {
 		this.contractList = contrat;
 	}
+
+	@Override
+	public String toString() {
+		return "Client [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", adress=" + adress
+				+ ", birthDate=" + birthDate + ", email=" + email + ", gender=" + gender + ", contractList="
+				+ contractList + "]";
+	}
 	
 	
 	

@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class InitializeDb {
@@ -52,29 +53,50 @@ public class InitializeDb {
             rate.setRateValue(b);
             rdao.persist(rate);
         }*/
-		Client client1 = new Client();
-		client1.setAdress("blabalalallalalala");
-		client1.setBirthDate(LocalDate.of(1984, 7, 7));
-		client1.setFirstname("georges");
-		client1.setLastname("garnier");
-		client1.setGender(Gender.MALE);
-		
-		//client1.setContrat(cdao.findByClientId(client1.getId()));
-		
-		Contract contrat = new Contract();
-		contrat.setClosureDate(LocalDate.of(2019, 12, 31));
-		contrat.setPaymentStartDate(LocalDate.of(2019, 12, 9));
-		contrat.setPaymentEndDate(LocalDate.of(2019, 12, 31));
-		contrat.setVehicleCategory(VehicleCategory.A);
-		contrat.setContractNumber(1);
-		
-		cldao.persist(client1);	
-		contrat.setClient(client1);
-		cdao.persist(contrat);
-		
+//		Client client1 = new Client();
+//		client1.setAdress("blabalalallalalala");
+//		client1.setBirthDate(LocalDate.of(1984, 7, 7));
+//		client1.setFirstname("georges");
+//		client1.setLastname("garnier");
+//		client1.setGender(Gender.MALE);
+//		
+//		
+//		Contract contrat = new Contract();
+//		contrat.setClosureDate(LocalDate.of(2019, 12, 31));
+//		contrat.setPaymentStartDate(LocalDate.of(2019, 12, 9));
+//		contrat.setPaymentEndDate(LocalDate.of(2019, 12, 31));
+//		contrat.setVehicleCategory(VehicleCategory.A);
+//		contrat.setContractNumber(1);
+//		
+//		cldao.persist(client1);
+//		contrat.setClient(client1);
+//		cdao.persist(contrat);
 		
 		
 		
+	}
+	
+	@PostConstruct
+	public void show() {
+//		List<Client> client = cldao.findAll();
+//		List<Contract> contrat = cdao.findAll();
+//		
+//		for(Client c : client) {
+//			System.out.println(c.getId());
+//			System.out.println(c.getLastname());
+//		}
+//		
+//		for(Contract con : contrat) {
+//			System.out.println(con);
+//		}
+//		Client client1 = new Client();
+//		client1.setId(18l);
+//		
+//		Contract ctest = new Contract();
+//		ctest.setClient(client1);
+//		System.out.println(ctest);
+		Map<Integer, Contract> contrat = cdao.findByClientId(1l);
+		System.out.println(contrat);
 	}
 
 }

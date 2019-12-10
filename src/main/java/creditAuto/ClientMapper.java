@@ -19,7 +19,7 @@ public final class ClientMapper implements RowMapper<Client>{
         clientTemp.setAdress(rs.getString("adress"));
         
         // get the client contracts list find by client_id
-        clientTemp.setContrat(new ContractDAO().findByClientId(clientTemp.getId()));
+       // clientTemp.setContrat(new ContractDAO().findByClientId(clientTemp.getId()));
         return clientTemp;
     }
 
