@@ -19,6 +19,7 @@ class RateCalculations {
 	static BigDecimal chosenMonthlyRate; // Applied periodic Rate
 	static BigDecimal amountSchedulePayment; // Monthly payment
 	static BigDecimal annualRate; // Annual Rate
+	static BigDecimal totalCost; // Total Cost
 
 	static BigDecimal threshold1 = new BigDecimal(10000);
 	static BigDecimal threshold2 = new BigDecimal(15000);
@@ -94,13 +95,13 @@ class RateCalculations {
 
 		amountSchedulePayment = nominator.divide(denominator, 4, RoundingMode.HALF_EVEN); // Calculating Formula with
 																							// roundingMode to avoid
-																							// arithmeticException in
+		totalCost = amountSchedulePayment.multiply(BigDecimal.valueOf(numberSchedulePayment));																					// arithmeticException in
 
 		annualRate = chosenMonthlyRate.multiply(BigDecimal.valueOf(12));
 
-		simul.setLoanRate(annualRate);
-		simul.setMonthlyPayment(amountSchedulePayment);
-		simul.setLoanTotalCost(amountSchedulePayment.multiply(BigDecimal.valueOf(numberSchedulePayment)));
+		simul.setLoanRate( (annualRate.multiply(BigDecimal.valueOf(100)) ).setScale(2, RoundingMode.CEILING));
+		simul.setMonthlyPayment( amountSchedulePayment.setScale(2, RoundingMode.CEILING) );
+		simul.setLoanTotalCost( totalCost.setScale(2, RoundingMode.CEILING) );
 
 	}
 
