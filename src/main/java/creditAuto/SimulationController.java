@@ -48,9 +48,11 @@ public class SimulationController {
 	public Simulation getSimulation(@RequestBody Simulation newSimul) {
 		System.out.println("getSimulation");
 		newSimulService.createSimul(newSimul.getPurchaseAmount(), newSimul.getLoanAmount(), newSimul.getLoanDuration(), newSimul.getVehicleCategory());
-		newSimul.setLoanRate(new BigDecimal(2));
-		newSimul.setMonthlyPayment(new BigDecimal(350));
-		newSimul.setLoanTotalCost(new BigDecimal(15000));
+//		newSimul.setLoanRate(new BigDecimal(2));
+//		newSimul.setMonthlyPayment(new BigDecimal(350));
+//		newSimul.setLoanTotalCost(new BigDecimal(15000));
+		RateCalculations.applyRateAndCalculateTotalCost(newSimul);
+		
 		return newSimul;
 	}
 	
