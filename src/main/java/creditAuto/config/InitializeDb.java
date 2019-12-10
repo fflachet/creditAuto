@@ -104,11 +104,15 @@ public class InitializeDb {
 //		Contract ctest = new Contract();
 //		ctest.setClient(client1);
 //		System.out.println(ctest);
-		Map<Integer, Contract> contrat = cdao.findByClientId(1l);
-		System.out.println(contrat);
 		
-		Client c1 = cldao.findByEmail("gegege@gmailcom");
-		System.out.println(c1);
+		
+		
+		
+//		Map<Integer, Contract> contrat = cdao.findByClientId(1l);
+//		System.out.println(contrat);
+//		
+//		Client c1 = cldao.findByEmail("gegege@gmailcom");
+//		System.out.println(c1);
 	}
 
 }
