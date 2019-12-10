@@ -1,4 +1,4 @@
-package creditauto;
+package creditAuto;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -119,12 +119,6 @@ public class Client {
 		this.contractList = contrat;
 	}
 
-	@Override
-	public String toString() {
-		return "Client [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", adress=" + adress
-				+ ", birthDate=" + birthDate + ", gender=" + gender + ", contractList=" + contractList + "]";
-	}
-	
 	public String getEmail() {
 		return email;
 	}
@@ -143,12 +137,10 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", adress=" + adress
-				+ ", birthDate=" + birthDate + ", email=" + email + ", gender=" + gender + ", contractList="
+		return "Client [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", adress=" + adress
+				+ ", email=" + email + ", birthDate=" + birthDate + ", gender=" + gender + ", contractList="
 				+ contractList + "]";
 	}
-	
-	
 	
 	//Getters/Setters
 

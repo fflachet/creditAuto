@@ -39,8 +39,8 @@ final class ContractAndClientMapExtractor implements ResultSetExtractor<Map<Inte
 			// need to complete the client map
 			Client clientTest = new Client();
 			clientTest.setId(rs.getLong("client_id"));
-			clientTest.setFirstname(rs.getString("firstname"));
-			clientTest.setLastname(rs.getString("lastname"));
+			clientTest.setFirstName(rs.getString("firstname"));
+			clientTest.setLastName(rs.getString("lastname"));
 			clientTest.setAdress(rs.getString("adress"));
 			clientTest.setGender(rs.getString("gender").contentEquals("MALE") ? Gender.MALE : Gender.FEMALE);
 			clientTest.setEmail(rs.getString("email") == null ? "null" : rs.getString("email") );

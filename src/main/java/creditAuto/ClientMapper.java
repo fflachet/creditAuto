@@ -11,8 +11,8 @@ public final class ClientMapper implements RowMapper<Client>{
 
     public Client mapRow(ResultSet rs, int rowNum) throws SQLException {
         Client clientTemp = new Client();
-        clientTemp.setLastname(rs.getString("lastname"));
-        clientTemp.setFirstname(rs.getString("firstname"));
+        clientTemp.setLastName(rs.getString("lastname"));
+        clientTemp.setFirstName(rs.getString("firstname"));
         clientTemp.setGender(rs.getString("gender") ==  "MALE" ? Gender.MALE : Gender.FEMALE);
         clientTemp.setAdress(rs.getString("adress"));
         clientTemp.setId(rs.getLong("id"));
