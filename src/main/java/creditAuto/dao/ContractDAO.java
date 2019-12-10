@@ -13,7 +13,9 @@ import org.springframework.stereotype.Repository;
 import creditAuto.config.JdbcDataSource;
 import creditAuto.mapper.ContractAndClientMapExtractor;
 import creditAuto.mapper.ContractMapper;
+import creditAuto.model.Client;
 import creditAuto.model.Contract;
+import creditAuto.model.Gender;
 
 @Repository
 @Transactional
@@ -21,6 +23,8 @@ public class ContractDAO extends JdbcDataSource {
 
 	@PersistenceContext
     protected EntityManager em;
+	
+	private Client client;
 
     protected Session getSession() {
         return em.unwrap(Session.class);
@@ -36,5 +40,10 @@ public class ContractDAO extends JdbcDataSource {
 
 	public Map<Integer, Contract> findByClientId(Long long1) {
 		return this.jdbcTemplate.query("select * from contract join client on contract.client_id = client.id where contract.client_id = ?",new Object[] {long1}, new ContractAndClientMapExtractor());
+	}
+	
+	public void createClient(String firstName, String lastName, String adress, String email, String birthDate, Gender gender) { 
+		client= new Client(firstName, lastName, adress, email, birthDate, gender);
+		em.persist(client);
 	}
 }

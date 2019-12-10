@@ -11,18 +11,18 @@ import creditAuto.model.Gender;
 public class ClientService {
 	
 	@Autowired
-	private ClientDAO clientD;
+	private ClientDAO clientDAO;
 	
 	private Client client;
-	
-	public void createClient(String firstName, String lastName, String adress, String email, String birthDate, Gender gender) { 
-		client= new Client(firstName, lastName, adress, email, birthDate, gender);
-		//System.out.println(client + " service" );
-		clientD.persist(client);
-		//listSimul.add(newSimul);
-		
+ 
+	public Client findClientbyEmail(String email) {
+		return clientDAO.findClientbyEmail(email);
 	}
 	
+	public Client createClient(String firstName, String lastName, String adress, String email, String birthDate, Gender gender) {
+		client= new Client(firstName, lastName, adress, email, birthDate, gender);
+		clientDAO.saveClient(client);
+		return client;
+	}
 	
-
 }

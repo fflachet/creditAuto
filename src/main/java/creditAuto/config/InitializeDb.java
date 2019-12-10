@@ -8,7 +8,9 @@ import org.springframework.stereotype.Component;
 import creditAuto.dao.ClientDAO;
 import creditAuto.dao.ContractDAO;
 import creditAuto.dao.RateDAO;
+import creditAuto.model.Client;
 import creditAuto.model.Contract;
+import creditAuto.model.Gender;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -77,8 +79,9 @@ public class InitializeDb {
 //		contrat.setClient(client1);
 //		cdao.persist(contrat);
 		
-		
-		
+		Client client1 = new Client("Romain", "Boijoux", "12 rue", "romain@gm.com", "07/09/1993", Gender.MALE);
+		cldao.persist(client1);
+				
 	}
 	
 	@PostConstruct
