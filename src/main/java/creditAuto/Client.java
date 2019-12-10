@@ -108,6 +108,22 @@ public class Client {
 	public void setContrat(List<Contract> contrat) {
 		this.contractList = contrat;
 	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public List<Contract> getContractList() {
+		return contractList;
+	}
+
+	public void setContractList(List<Contract> contractList) {
+		this.contractList = contractList;
+	}
 
 	@Override
 	public String toString() {
