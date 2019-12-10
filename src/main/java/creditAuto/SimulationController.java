@@ -16,20 +16,13 @@ public class SimulationController {
 	private SimulationService newSimulService;
 
 	@RequestMapping(value = "/simulation", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Simulation getSimulation(@RequestBody Simulation newSimul) {
-		
-		System.out.println("getSimulation");
+	public Simulation getSimulation(@RequestBody Simulation newSimul) {	
 		newSimulService.createSimul(newSimul.getPurchaseAmount(), newSimul.getLoanAmount(), newSimul.getLoanDuration(), newSimul.getVehicleCategory());
-		newSimul.setLoanRate(new BigDecimal(2));
-		newSimul.setMonthlyPayment(new BigDecimal(350));
-		newSimul.setLoanTotalCost(new BigDecimal(15000));
-		
-		// adding rate calcul into object newSimul
-		newSimulService.sendBackRate(newSimul);
-		System.out.println("after : " + newSimul);
+		RateCalculations.applyRateAndCalculateTotalCost(newSimul);
 		return newSimul;
-		//return newSimul;
 	}
+	
+
 
 	
 	

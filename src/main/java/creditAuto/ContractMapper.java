@@ -27,7 +27,7 @@ public final class ContractMapper implements RowMapper<Contract>{
 		contractTemp.setPaymentStartDate(new java.sql.Date(rs.getDate("paymentstartdate").getTime()).toLocalDate());
 		contractTemp.setPurchaseAmount(BigDecimal.valueOf(rs.getInt("purchaseamount")));
 		
-		contractTemp.setVehicleCategory(rs.getString("vehiclecategory").contentEquals( "A") ? VehicleCategory.A : VehicleCategory.B);
+		contractTemp.setVehicleCategory(rs.getString("vehiclecategory") == "A" ? VehicleCategory.A : VehicleCategory.B);
 		
 		return contractTemp;
 	}
