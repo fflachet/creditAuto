@@ -27,13 +27,13 @@ public final class ContractAndClientMapExtractor implements ResultSetExtractor<M
 
 			// Contract map
 			contractTemp.setId(rs.getLong("id"));
-			contractTemp.setClosureDate( new java.sql.Date(rs.getDate("closuredate").getTime()).toLocalDate());
+			contractTemp.setClosureDate( rs.getString("closuredate"));
 			contractTemp.setContractNumber(rs.getInt("contractnumber"));
 			contractTemp.setLoanDuration(rs.getInt("loanduration"));
 			contractTemp.setLoanRate(BigDecimal.valueOf(rs.getInt("loanrate")));
 			contractTemp.setLoanTotalCost(BigDecimal.valueOf(rs.getInt("loantotalcost")));
-			contractTemp.setPaymentEndDate(new java.sql.Date(rs.getDate("paymentenddate").getTime()).toLocalDate());
-			contractTemp.setPaymentStartDate(new java.sql.Date(rs.getDate("paymentstartdate").getTime()).toLocalDate());
+			contractTemp.setPaymentEndDate(rs.getString("paymentenddate"));
+			contractTemp.setPaymentStartDate(rs.getString("paymentstartdate"));
 			contractTemp.setPurchaseAmount(BigDecimal.valueOf(rs.getInt("purchaseamount")));
 			contractTemp.setVehicleCategory(rs.getString("vehiclecategory") == "A" ? VehicleCategory.A : VehicleCategory.B);
 

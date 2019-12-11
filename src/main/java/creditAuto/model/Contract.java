@@ -1,7 +1,7 @@
 package creditAuto.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,13 +23,13 @@ public class Contract {
 	private int contractNumber;
 	
 	@Column
-	private LocalDate paymentStartDate;
+	private String paymentStartDate;
 	
 	@Column
-	private LocalDate paymentEndDate;
+	private String paymentEndDate;
 	
 	@Column
-	private LocalDate closureDate;
+	private String closureDate;
 	
 	@Column
 	private BigDecimal purchaseAmount;
@@ -47,6 +47,7 @@ public class Contract {
 	@Column
 	private BigDecimal loanRate;
 	
+	
 	@ManyToOne
 	private Client client;
 	
@@ -56,8 +57,8 @@ public class Contract {
 		
 	}
 	
-	public Contract(Long id, int contractNumber, LocalDate paymentStartDate, LocalDate paymentEndDate,
-			LocalDate closureDate, BigDecimal purchaseAmount, BigDecimal loanTotalCost, int loanDuration,
+	public Contract(Long id, int contractNumber, String paymentStartDate, String paymentEndDate,
+			String closureDate, BigDecimal purchaseAmount, BigDecimal loanTotalCost, int loanDuration,
 			VehicleCategory vehicleCategory, BigDecimal loanRate, Client client) {
 		super();
 		this.id = id;
@@ -90,27 +91,27 @@ public class Contract {
 		this.contractNumber = contractNumber;
 	}
 
-	public LocalDate getPaymentStartDate() {
+	public String getPaymentStartDate() {
 		return paymentStartDate;
 	}
 
-	public void setPaymentStartDate(LocalDate paymentStartDate) {
+	public void setPaymentStartDate(String paymentStartDate) {
 		this.paymentStartDate = paymentStartDate;
 	}
 
-	public LocalDate getPaymentEndDate() {
+	public String getPaymentEndDate() {
 		return paymentEndDate;
 	}
 
-	public void setPaymentEndDate(LocalDate paymentEndDate) {
+	public void setPaymentEndDate(String paymentEndDate) {
 		this.paymentEndDate = paymentEndDate;
 	}
 
-	public LocalDate getClosureDate() {
+	public String getClosureDate() {
 		return closureDate;
 	}
 
-	public void setClosureDate(LocalDate closureDate) {
+	public void setClosureDate(String closureDate) {
 		this.closureDate = closureDate;
 	}
 
