@@ -2,46 +2,56 @@ package creditAuto.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="user_")
+@Table(name = "user_")
 public class User {
-	
+
 	@Id
 	@GeneratedValue
 	private Long Id;
-	
+
 	@Column
 	private String userFirstname;
-	
+
 	@Column
 	private String userLastname;
-	
+
 	@Column
-	private String login;
-	
+	private String username;
+
 	@Column
 	private String password;
-	
-	private Role roleObject;
-	
-	@Column
-	private int role;
 
-	
-	public User() {}
-	
-	public User(Long id, String userFirstname, String userLastname, String login, String password, int role) {
-		Id = id;
+	// Pourquoi roleObject et role ?
+
+	@Enumerated(EnumType.STRING)
+	@Column
+	private Role role;
+
+//	@Column
+//	private int role;
+
+	public User() {
+	}
+
+	public User(String userFirstname, String userLastname, String username, String password, Role role) {
 		this.userFirstname = userFirstname;
 		this.userLastname = userLastname;
-		this.login = login;
+		this.username = username;
 		this.password = password;
 		this.role = role;
 	}
+
+//	public User(String username, String password) {
+//		this.username = username;
+//		this.password = password;
+//	}
 
 	public Long getId() {
 		return Id;
@@ -67,12 +77,12 @@ public class User {
 		this.userLastname = userLastname;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -83,13 +93,12 @@ public class User {
 		this.password = password;
 	}
 
-	public int getRole() {
+	public Role getRole() {
 		return role;
 	}
 
-	public void setRole(Role roleObject) {
-		this.role = roleObject.getRole();
+	public void setRole(Role role) {
+		this.role = role;
 	}
-	
 
 }

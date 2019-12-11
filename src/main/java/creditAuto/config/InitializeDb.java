@@ -8,9 +8,12 @@ import org.springframework.stereotype.Component;
 import creditAuto.dao.ClientDAO;
 import creditAuto.dao.ContractDAO;
 import creditAuto.dao.RateDAO;
+import creditAuto.dao.UserDAO;
 import creditAuto.model.Client;
 import creditAuto.model.Contract;
 import creditAuto.model.Gender;
+import creditAuto.model.Role;
+import creditAuto.model.User;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -29,6 +32,9 @@ public class InitializeDb {
 	
 	@Autowired
 	private ContractDAO cdao;
+	
+	@Autowired
+	private UserDAO userDAO;
 	
 	@PostConstruct
 	public void save() {
@@ -81,7 +87,13 @@ public class InitializeDb {
 //		contrat.setClient(client1);
 //		cdao.persist(contrat);
 		
-		
+//		User cdc = new User("Romain", "Boijoux", "romain", "chargeDeClientele", Role.CUSTOMERADVISER);
+//		User admin = new User("Francois", "Flachet", "francois", "admin", Role.ADMIN);
+//		User manager = new User("Aimen", "Masmoudi", "aimen", "manager", Role.MANAGER);
+//		
+//		userDAO.persist(cdc);
+//		userDAO.persist(admin);
+//		userDAO.persist(manager);
 		
 	}
 	

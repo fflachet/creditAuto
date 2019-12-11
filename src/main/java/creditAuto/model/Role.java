@@ -1,17 +1,15 @@
 package creditAuto.model;
 
 public enum Role {
-	ADMIN(1),
-	MANAGER(2),
-	CUSTOMERADVISER(3);
+	ADMIN(),
+	MANAGER(),
+	CUSTOMERADVISER();
 	
-	private int Id;
+//	Role(int i) {
+//		this.Id = i;
+//	}
 	
-	Role(int i) {
-		this.Id = i;
-	}
-	
-	int getRole(){
-		return this.Id;
-	}
+//	int getRole(){
+//		return this.Id;
+//	}
 }
