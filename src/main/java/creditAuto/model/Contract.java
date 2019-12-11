@@ -47,6 +47,9 @@ public class Contract {
 	@Column
 	private BigDecimal loanRate;
 	
+	@Column
+	private BigDecimal monthlyPayment;
+	
 	@ManyToOne
 	private Client client;
 	

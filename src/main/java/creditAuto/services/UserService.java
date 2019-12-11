@@ -13,15 +13,15 @@ public class UserService {
 	private UserDAO userDAO;
 	
 	public boolean  checkLoginInformation(User user) {
-		if (userDAO.findByUsername(user.getUsername()) != null) {
+//		if (userDAO.findByUsername(user.getUsername()) != null) {
 			if(userDAO.comparePassword(user)) {
 				return true;
 			} else {
 				return false;
 			}
-		} else {
-			return false;
-		}
+//		} else {
+//			return false;
+////		}
 		
 		//return rateValue;
 	}
