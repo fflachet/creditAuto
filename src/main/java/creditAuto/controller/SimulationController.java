@@ -14,7 +14,7 @@ import creditAuto.utils.RateCalculations;
 
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin("http://localhost:4200")
 public class SimulationController {
 	
 	@Autowired

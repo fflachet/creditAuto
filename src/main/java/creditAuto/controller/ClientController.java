@@ -1,9 +1,5 @@
 package creditAuto.controller;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,36 +11,32 @@ import org.springframework.web.bind.annotation.RestController;
 import creditAuto.model.Client;
 import creditAuto.services.ClientService;
 
+@RestController
+@CrossOrigin("http://localhost:4200")
+public class ClientController {
 
+	@Autowired
+	private ClientService clientService;
 
-	
-	@RestController
-	@CrossOrigin(origins="http://localhost:4200")
-	//@CrossOrigin(origins="*")
-	public class ClientController {
-		
-		@Autowired
-		private ClientService clientService;
+	@RequestMapping(value = "/nouveauClient", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public Client getClient(@RequestBody Client client) {
 
-		@RequestMapping(value = "/nouveauClient", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-		public Client getClient(@RequestBody Client client) {
-			
-			System.out.println(client +" controller ");
-			clientService.createClient(client.getFirstName(), client.getLastName(), client.getAdress(), client.getEmail(), client.getBirthDate() , client.getGender());	
-			return client;
+		System.out.println(client + " controller ");
+		clientService.createClient(client.getFirstName(), client.getLastName(), client.getAdress(), client.getEmail(),
+				client.getBirthDate(), client.getGender());
+		return client;
+	}
+
+	@RequestMapping(value = "/searchclient", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public Client findByEmail(String email) throws Exception {
+		Client c2 = null;
+		try {
+			c2 = clientService.find(email);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
-		
-		@RequestMapping(value = "/searchclient", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
-		public Client findByEmail(String email) throws Exception {
-			Client c2 = null;
-			try {
-				c2 = clientService.find(email);
-			}catch(Exception e) {
-				System.out.println(e.getMessage());
-			}
-			return c2;
-			
-		}
-		
-	
+		return c2;
+
+	}
+
 }
