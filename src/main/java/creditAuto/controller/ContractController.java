@@ -24,7 +24,6 @@ public class ContractController {
 
 	@RequestMapping(value = "/contract", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Contract sendContract(@RequestBody Contract contract) {
-		
 		this.contractService.createContract(contract.getId(),  contract.getContractNumber(),  contract.getPaymentStartDate(),  contract.getPaymentEndDate(),
 				contract.getClosureDate(),  contract.getPurchaseAmount(),  contract.getLoanTotalCost(),  contract.getLoanDuration(),
 				contract.getVehicleCategory(),  contract.getLoanRate(),  contract.getClient());

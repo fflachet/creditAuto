@@ -68,18 +68,8 @@ public class InitializeDb {
 //		client1.setGender(Gender.MALE);
 //		client1.setEmail("gegege@gmailcom");
 //		cldao.persist(client1);
-//		
-//		
-//		Contract contrat = new Contract();
-//		contrat.setClosureDate(LocalDate.of(2019, 12, 31));
-//		contrat.setPaymentStartDate(LocalDate.of(2019, 12, 9));
-//		contrat.setPaymentEndDate(LocalDate.of(2019, 12, 31));
-//		contrat.setVehicleCategory(VehicleCategory.A);
-//		contrat.setContractNumber(1);
-//		
-//		cldao.persist(client1);
-//		contrat.setClient(client1);
-//		cdao.persist(contrat);
+
+
 		
 		
 		

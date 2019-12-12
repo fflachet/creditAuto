@@ -20,7 +20,7 @@ public class Contract {
 	private Long id;
 	
 	@Column
-	private int contractNumber;
+	private Integer contractNumber;
 	
 	@Column
 	private String paymentStartDate;
@@ -38,7 +38,7 @@ public class Contract {
 	private BigDecimal loanTotalCost;
 	
 	@Column
-	private int loanDuration;
+	private Integer loanDuration;
 	
 	@Enumerated(EnumType.STRING)
 	@Column
@@ -47,12 +47,10 @@ public class Contract {
 	@Column
 	private BigDecimal loanRate;
 	
-	
 	@ManyToOne
 	private Client client;
 	
 	// constructor
-	
 	public Contract() {
 		
 	}
@@ -87,7 +85,7 @@ public class Contract {
 		return contractNumber;
 	}
 
-	public void setContractNumber(int contractNumber) {
+	public void setContractNumber(Integer contractNumber) {
 		this.contractNumber = contractNumber;
 	}
 
@@ -135,7 +133,7 @@ public class Contract {
 		return loanDuration;
 	}
 
-	public void setLoanDuration(int loanDuration) {
+	public void setLoanDuration(Integer loanDuration) {
 		this.loanDuration = loanDuration;
 	}
 
