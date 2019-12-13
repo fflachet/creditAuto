@@ -1,5 +1,7 @@
 package creditAuto.config;
 
+import java.math.BigDecimal;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,15 +10,7 @@ import org.springframework.stereotype.Component;
 import creditAuto.dao.ClientDAO;
 import creditAuto.dao.ContractDAO;
 import creditAuto.dao.RateDAO;
-import creditAuto.model.Client;
-import creditAuto.model.Contract;
-import creditAuto.model.Gender;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import creditAuto.model.Rate;
 
 @Component
 public class InitializeDb {
@@ -29,6 +23,7 @@ public class InitializeDb {
 	
 	@Autowired
 	private ContractDAO cdao;
+	
 	
 	@PostConstruct
 	public void save() {
@@ -68,11 +63,20 @@ public class InitializeDb {
 //		client1.setGender(Gender.MALE);
 //		client1.setEmail("gegege@gmailcom");
 //		cldao.persist(client1);
-
-
 		
-		
-		
+//		Rate r1 = new Rate();
+//		Rate r2 = new Rate();
+//		Rate r3 = new Rate();
+//		r1.setRateName("T1");
+//		r2.setRateName("T2");
+//		r3.setRateName("T3");
+//		r1.setRateValue(BigDecimal.valueOf(0.5));
+//		r2.setRateValue(BigDecimal.valueOf(0.7));
+//		r3.setRateValue(BigDecimal.valueOf(0.9));
+//		
+//		rdao.persist(r1);
+//		rdao.persist(r2);
+//		rdao.persist(r3);	
 	}
 	
 	@PostConstruct
@@ -94,13 +98,7 @@ public class InitializeDb {
 //		Contract ctest = new Contract();
 //		ctest.setClient(client1);
 //		System.out.println(ctest);
-<<<<<<< HEAD
-=======
-		
-		
-		
-		
->>>>>>> 08785604252fb3ff659586e8c994a8ce55d7255a
+
 //		Map<Integer, Contract> contrat = cdao.findByClientId(1l);
 //		System.out.println(contrat);
 //		

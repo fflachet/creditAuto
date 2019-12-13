@@ -5,11 +5,9 @@ import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import creditAuto.dao.ClientDAO;
 import creditAuto.dao.ContractDAO;
 import creditAuto.model.Client;
 import creditAuto.model.Contract;
-import creditAuto.model.Gender;
 import creditAuto.model.VehicleCategory;
 
 @Service
