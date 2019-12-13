@@ -27,7 +27,7 @@ public class ContractService {
 				loanTotalCost, loanDuration, vehicleCategory, loanRate, client);
 		System.out.println(contract + "service");
 		// System.out.println(client + " service" );
-		contractDao.persist(contract);
+		//contractDao.persist(contract);
 		// listSimul.add(newSimul);
 
 	}
