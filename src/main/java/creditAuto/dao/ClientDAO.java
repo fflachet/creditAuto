@@ -33,7 +33,7 @@ public class ClientDAO extends JdbcDataSource {
     }
 
 	public Client findById(long id) {
-		 return this.jdbcTemplate.queryForObject("select client.lastname from client where client.id = ?", new Object[] {id}, new ClientMapper());
+		 return this.jdbcTemplate.queryForObject("select * from client where client.id = ?", new Object[] {id}, new ClientMapper());
 		// return id;
 		 
 	}

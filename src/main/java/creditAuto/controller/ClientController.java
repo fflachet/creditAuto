@@ -1,15 +1,13 @@
 package creditAuto.controller;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import creditAuto.model.Client;
@@ -45,6 +43,13 @@ import creditAuto.services.ClientService;
 			return c2;
 			
 		}
+		
+		@RequestMapping(value = "/client/{id}", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
+		@ResponseBody
+		public Client find(@PathVariable Long id) {
+			return clientService.findById(id);
+		}
+		
 		
 	
 }
