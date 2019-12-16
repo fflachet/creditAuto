@@ -22,15 +22,22 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping("/login")
-    public boolean login(@RequestBody User user) {
-		System.out.println(user);
-		
-		userService.checkLoginInformation(user);
-		
-        return
-          user.getUsername().equals("admin") && user.getPassword().equals("adminPass");
-    }
+//	@RequestMapping("/login")
+//    public boolean login(@RequestBody User user) {
+//		System.out.println(user);
+//		
+//		userService.checkLoginInformation(user);
+//		
+//        return
+//          user.getUsername().equals("admin") && user.getPassword().equals("adminPass");
+//    }
+	
+	 @RequestMapping("/login")
+	    public boolean login(User user) {
+	        return
+	          user.getUsername().equals("user") && user.getPassword().equals("password");
+	    }
+
 	
 	  @RequestMapping("/admin")
 	    public Principal user(HttpServletRequest request) {
