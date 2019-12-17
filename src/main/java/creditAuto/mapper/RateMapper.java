@@ -19,6 +19,4 @@ public final class RateMapper implements RowMapper<Rate>{
         return rateTemp;
     }
 
-
-
 }

@@ -55,6 +55,12 @@ public class Rate {
 	public void setRateName(String rateName) {
 		this.rateName = rateName;
 	}
+
+	@Override
+	public String toString() {
+		return "Rate [id=" + id + ", rateName=" + rateName + ", rateValue=" + rateValue + "]";
+	}
+	
 	
 
 	

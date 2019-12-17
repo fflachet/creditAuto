@@ -26,7 +26,6 @@ public class RateService {
 	public void createRate(Long id, String rateName, BigDecimal rateValue) {
 
 		rate = new Rate(id, rateName, rateValue);
-
 		System.out.println(rate + "service create");
 
 		// rateDao.persist(rate);
@@ -36,11 +35,13 @@ public class RateService {
 	public List<Rate> find() {
 
 		listUpdatedRate = rateDao.findAll();
-
 		System.out.println(listUpdatedRate + "service get");
 
 		return listUpdatedRate;
-
+	}
+	
+	public void updateARate(Rate rate) {
+		rateDao.update(rate);
 	}
 
 }

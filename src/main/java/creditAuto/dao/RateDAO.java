@@ -31,4 +31,10 @@ public class RateDAO extends JdbcDataSource {
     public List<Rate> findAll(){
         return this.jdbcTemplate.query("select * from rate", new RateMapper());
     }
+    
+    public void update(Rate entity) {
+    	System.out.println(entity.getRateName());
+    	System.out.println(entity.getId());
+    	this.jdbcTemplate.update("update rate set ratevalue = ? where id = ?", new Object[] {entity.getRateValue(), entity.getId()});
+    }
 }

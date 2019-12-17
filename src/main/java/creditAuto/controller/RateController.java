@@ -21,15 +21,18 @@ public class RateController {
 
 
 	@RequestMapping(value = "/rate", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public List<Rate> sendRate(@RequestBody Rate rate) {
+	public void sendRate(@RequestBody Rate rate) {
 
-		List<Rate> listRate = new ArrayList<Rate>();
+		//List<Rate> listRate = new ArrayList<Rate>();
 
-		for (Rate r : listRate) {
+		/*for (Rate r : listRate) {
 			this.rateService.createRate(r.getId(), r.getRateName(),r.getRateValue());
 			System.out.println(rate +" rate controller ");
-		}
-		return listRate;
+		}*/
+		// return listRate;
+//		System.out.println(rate);
+		rateService.updateARate(rate);
+		
 	}
 
 	
