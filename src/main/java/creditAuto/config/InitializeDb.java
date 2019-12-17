@@ -98,7 +98,13 @@ public class InitializeDb {
 //		Contract ctest = new Contract();
 //		ctest.setClient(client1);
 //		System.out.println(ctest);
-
+//<<<<<<< HEAD
+//=======
+//		
+//		
+//		
+//		
+//>>>>>>> 08785604252fb3ff659586e8c994a8ce55d7255a
 //		Map<Integer, Contract> contrat = cdao.findByClientId(1l);
 //		System.out.println(contrat);
 //		

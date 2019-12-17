@@ -12,23 +12,19 @@ import creditAuto.model.Simulation;
 import creditAuto.services.SimulationService;
 import creditAuto.utils.RateCalculations;
 
-
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class SimulationController {
-	
+
 	@Autowired
 	private SimulationService newSimulService;
 
 	@RequestMapping(value = "/simulation", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Simulation getSimulation(@RequestBody Simulation newSimul) {	
-		newSimulService.createSimul(newSimul.getPurchaseAmount(), newSimul.getLoanAmount(), newSimul.getLoanDuration(), newSimul.getVehicleCategory());
+	public Simulation getSimulation(@RequestBody Simulation newSimul) {
+		newSimulService.createSimul(newSimul.getPurchaseAmount(), newSimul.getLoanAmount(), newSimul.getLoanDuration(),
+				newSimul.getVehicleCategory());
 		RateCalculations.applyRateAndCalculateTotalCost(newSimul);
 		return newSimul;
 	}
-	
 
-
-	
-	
 }

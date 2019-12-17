@@ -2,6 +2,8 @@ package creditAuto.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -21,24 +23,29 @@ public class User {
 	private String userLastname;
 	
 	@Column
-	private String login;
+	private String username;
 	
 	@Column
 	private String password;
 	
-	private Role roleObject;
+	//private Role roleObject;
+//	
+//	@Column
+//	private int role;
 	
+	@Enumerated(EnumType.STRING)
 	@Column
-	private int role;
+	private Role role;
+
 
 	
 	public User() {}
 	
-	public User(Long id, String userFirstname, String userLastname, String login, String password, int role) {
+	public User(Long id, String userFirstname, String userLastname, String username, String password, Role role) {
 		Id = id;
 		this.userFirstname = userFirstname;
 		this.userLastname = userLastname;
-		this.login = login;
+		this.username = username;
 		this.password = password;
 		this.role = role;
 	}
@@ -67,12 +74,12 @@ public class User {
 		this.userLastname = userLastname;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -83,13 +90,21 @@ public class User {
 		this.password = password;
 	}
 
-	public int getRole() {
+	public Role getRole() {
 		return role;
 	}
 
-	public void setRole(Role roleObject) {
-		this.role = roleObject.getRole();
+	public void setRole(Role role) {
+		this.role = role;
 	}
+
+	@Override
+	public String toString() {
+		return "User [Id=" + Id + ", userFirstname=" + userFirstname + ", userLastname=" + userLastname + ", username="
+				+ username + ", password=" + password + ", role=" + role + "]";
+	}
+	
+	
 	
 
 }

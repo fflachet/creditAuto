@@ -1,5 +1,7 @@
 package creditAuto.services;
 
+import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,12 @@ public class ClientService {
 		Client c = clientD.findByEmail(email);
 		return c;
 	}
+	
+	public Client findById(Long id) {
+		return clientD.findById(id);
+	}
+	
+	
 	
 	
 
