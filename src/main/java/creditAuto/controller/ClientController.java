@@ -28,7 +28,8 @@ import creditAuto.services.ClientService;
 		public Client getClient(@RequestBody Client client) {
 			
 			System.out.println(client +" controller ");
-			clientService.createClient(client.getFirstName(), client.getLastName(), client.getAdress(), client.getEmail(), client.getBirthDate() , client.getGender());	
+			clientService.createClient(client);
+			
 			return client;
 		}
 		

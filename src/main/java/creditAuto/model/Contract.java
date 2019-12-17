@@ -72,6 +72,22 @@ public class Contract {
 		this.client = client;
 	}
 	
+	public Contract(Long id, int contractNumber, String paymentStartDate, String paymentEndDate,
+			String closureDate, BigDecimal purchaseAmount, BigDecimal loanTotalCost, int loanDuration,
+			VehicleCategory vehicleCategory, BigDecimal loanRate) {
+		super();
+		this.id = id;
+		this.contractNumber = contractNumber;
+		this.paymentStartDate = paymentStartDate;
+		this.paymentEndDate = paymentEndDate;
+		this.closureDate = closureDate;
+		this.purchaseAmount = purchaseAmount;
+		this.loanTotalCost = loanTotalCost;
+		this.loanDuration = loanDuration;
+		this.vehicleCategory = vehicleCategory;
+		this.loanRate = loanRate;
+	}
+	
 	
 	public Long getId() {
 		return id;
