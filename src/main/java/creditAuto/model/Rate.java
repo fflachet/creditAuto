@@ -15,6 +15,9 @@ public class Rate {
 	private Long id;
 	
 	@Column
+	private String rateName;
+	
+	@Column
 	private BigDecimal rateValue;
 
 	// Constructor
@@ -22,9 +25,10 @@ public class Rate {
 		
 	}
 	
-	public Rate(Long id, BigDecimal rateValue) {
+	public Rate(Long id, String rateName, BigDecimal rateValue) {
 		this.id = id;
 		this.rateValue = rateValue;
+		this.rateName = rateName;
 	}
 
 	// Getters/Setters
@@ -43,6 +47,22 @@ public class Rate {
 	public void setRateValue(BigDecimal rateValue) {
 		this.rateValue = rateValue;
 	}
+
+	public String getRateName() {
+		return rateName;
+	}
+
+	public void setRateName(String rateName) {
+		this.rateName = rateName;
+	}
+
+	@Override
+	public String toString() {
+		return "Rate [id=" + id + ", rateName=" + rateName + ", rateValue=" + rateValue + "]";
+	}
+	
+	
+
 	
 	
 	

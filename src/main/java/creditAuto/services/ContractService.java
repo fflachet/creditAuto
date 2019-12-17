@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import creditAuto.dao.ContractDAO;
 import creditAuto.model.Contract;
+import creditAuto.model.VehicleCategory;
 
 @Service
 public class ContractService {

@@ -15,9 +15,8 @@ public final class RateMapper implements RowMapper<Rate>{
         Rate rateTemp = new Rate();
         rateTemp.setRateValue(rs.getBigDecimal("rateValue"));
         rateTemp.setId(rs.getLong("id"));
+        rateTemp.setRateName(rs.getString("rateName"));
         return rateTemp;
     }
-
-
 
 }

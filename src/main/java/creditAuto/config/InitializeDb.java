@@ -1,5 +1,7 @@
 package creditAuto.config;
 
+import java.math.BigDecimal;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Component;
 import creditAuto.dao.ClientDAO;
 import creditAuto.dao.ContractDAO;
 import creditAuto.dao.RateDAO;
+<<<<<<< HEAD
 import creditAuto.dao.UserDAO;
 import creditAuto.model.Client;
 import creditAuto.model.Contract;
@@ -20,6 +23,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+=======
+import creditAuto.model.Rate;
+>>>>>>> master
 
 @Component
 public class InitializeDb {
@@ -59,6 +65,60 @@ public class InitializeDb {
 //		Ajout d'un taux
 				
 
+	
+	
+	@PostConstruct
+	public void save() {
+		/*User user1 = new User();
+		user1.setLogin("test");
+		user1.setUserFirstname("steve");
+		user1.setUserLastname("Rogers");
+		user1.setPassword("admin");
+		user1.setRole(Role.ADMIN);
+		udao.persist(user1);
+
+        List<BigDecimal> listBigD = new ArrayList<>();
+        BigDecimal bd1 = new BigDecimal(0.2);
+        BigDecimal bd2 = new BigDecimal(0.2);
+        BigDecimal bd3 = new BigDecimal(0.2);
+        BigDecimal bd4 = new BigDecimal(0.2);
+        BigDecimal bd5 = new BigDecimal(0.2);
+        BigDecimal bd6 = new BigDecimal(0.2);
+
+        listBigD.add(bd1);
+        listBigD.add(bd2);
+        listBigD.add(bd3);
+        listBigD.add(bd4);
+        listBigD.add(bd5);
+        listBigD.add(bd6);
+
+        for(BigDecimal b : listBigD) {
+            Rate rate = new Rate();
+            rate.setRateValue(b);
+            rdao.persist(rate);
+        }*/
+//		Client client1 = new Client();
+//		client1.setAdress("blabalalallalalala");
+//		client1.setBirthDate("12-12-1212");
+//		client1.setFirstName("georges");
+//		client1.setLastName("garnier");
+//		client1.setGender(Gender.MALE);
+//		client1.setEmail("gegege@gmailcom");
+//		cldao.persist(client1);
+		
+//		Rate r1 = new Rate();
+//		Rate r2 = new Rate();
+//		Rate r3 = new Rate();
+//		r1.setRateName("T1");
+//		r2.setRateName("T2");
+//		r3.setRateName("T3");
+//		r1.setRateValue(BigDecimal.valueOf(0.5));
+//		r2.setRateValue(BigDecimal.valueOf(0.7));
+//		r3.setRateValue(BigDecimal.valueOf(0.9));
+//		
+//		rdao.persist(r1);
+//		rdao.persist(r2);
+//		rdao.persist(r3);	
 	}
 
 	@PostConstruct
