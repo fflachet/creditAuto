@@ -10,7 +10,10 @@ import org.springframework.stereotype.Component;
 import creditAuto.dao.ClientDAO;
 import creditAuto.dao.ContractDAO;
 import creditAuto.dao.RateDAO;
+import creditAuto.dao.UserDAO;
 import creditAuto.model.Rate;
+import creditAuto.model.Role;
+import creditAuto.model.User;
 
 @Component
 public class InitializeDb {
@@ -24,13 +27,16 @@ public class InitializeDb {
 	@Autowired
 	private ContractDAO cdao;
 	
+	@Autowired
+	private UserDAO udao;
+	
 	
 	@PostConstruct
 	public void save() {
 		/*User user1 = new User();
-		user1.setLogin("test");
-		user1.setUserFirstname("steve");
-		user1.setUserLastname("Rogers");
+		user1.setUsername("francois");
+		user1.setUserFirstname("francois");
+		user1.setUserLastname("francois");
 		user1.setPassword("admin");
 		user1.setRole(Role.ADMIN);
 		udao.persist(user1);
