@@ -30,6 +30,12 @@ public class Rate {
 		this.rateValue = rateValue;
 		this.rateName = rateName;
 	}
+	
+	public Rate(String rateName, BigDecimal rateValue) {
+		this.rateValue = rateValue;
+		this.rateName = rateName;
+	}
+
 
 	// Getters/Setters
 	public Long getId() {

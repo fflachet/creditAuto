@@ -16,9 +16,11 @@ import creditAuto.model.Contract;
 import creditAuto.model.Gender;
 import creditAuto.model.Role;
 import creditAuto.model.User;
+import creditAuto.model.VehicleCategory;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +41,7 @@ public class InitializeDb {
 
 	@Autowired
 	private UserDAO udao;
+	
 
 	@PostConstruct
 	public void save() {
@@ -59,9 +62,23 @@ public class InitializeDb {
 //		cdao.persist(morty);
 //		Client karim = new Client("Karim", "Smith", "Lunel", "karim@smith.com", "12/12/1987", Gender.MALE);
 //		cdao.persist(karim);
-		
-//		Ajout d'un taux
-				
+//		
+////		Ajout de taux
+//		Rate T1 = new Rate("T1", new BigDecimal(2));
+//		rdao.persist(T1);
+//		Rate T2 = new Rate("T2", new BigDecimal(3));
+//		rdao.persist(T2);
+//		Rate T3 = new Rate("T3", new BigDecimal(4.5));
+//		rdao.persist(T3);
+//		Rate T4 = new Rate("T4", new BigDecimal(1.5));
+//		rdao.persist(T4);
+//		
+////		Ajout de contrats
+//		Contract contrat1 = new Contract(1, LocalDate.of(2019, Month.DECEMBER, 17), LocalDate.of(2020, Month.DECEMBER, 17), null, null, null, 12, VehicleCategory.A, null);
+//		cdao.persist(contrat1);
+//		Contract contrat2 = new Contract(2, LocalDate.of(2019, Month.DECEMBER, 19), LocalDate.of(2020, Month.NOVEMBER, 19), null, null, null, 11, VehicleCategory.A, null);
+//		cdao.persist(contrat2);
+//		
 
 
 		/*User user1 = new User();

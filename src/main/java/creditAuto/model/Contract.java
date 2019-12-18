@@ -1,7 +1,7 @@
 package creditAuto.model;
 
 import java.math.BigDecimal;
-
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,13 +23,13 @@ public class Contract {
 	private Integer contractNumber;
 	
 	@Column
-	private String paymentStartDate;
+	private LocalDate paymentStartDate;
 	
 	@Column
-	private String paymentEndDate;
+	private LocalDate paymentEndDate;
 	
 	@Column
-	private String closureDate;
+	private LocalDate closureDate;
 	
 	@Column
 	private BigDecimal purchaseAmount;
@@ -55,8 +55,8 @@ public class Contract {
 		
 	}
 	
-	public Contract(Long id, int contractNumber, String paymentStartDate, String paymentEndDate,
-			String closureDate, BigDecimal purchaseAmount, BigDecimal loanTotalCost, int loanDuration,
+	public Contract(Long id, int contractNumber, LocalDate paymentStartDate, LocalDate paymentEndDate,
+			LocalDate closureDate, BigDecimal purchaseAmount, BigDecimal loanTotalCost, int loanDuration,
 			VehicleCategory vehicleCategory, BigDecimal loanRate, Client client) {
 		super();
 		this.id = id;
@@ -72,11 +72,26 @@ public class Contract {
 		this.client = client;
 	}
 	
-	public Contract(Long id, int contractNumber, String paymentStartDate, String paymentEndDate,
-			String closureDate, BigDecimal purchaseAmount, BigDecimal loanTotalCost, int loanDuration,
+	public Contract(Long id, int contractNumber, LocalDate paymentStartDate, LocalDate paymentEndDate,
+			LocalDate closureDate, BigDecimal purchaseAmount, BigDecimal loanTotalCost, int loanDuration,
 			VehicleCategory vehicleCategory, BigDecimal loanRate) {
 		super();
 		this.id = id;
+		this.contractNumber = contractNumber;
+		this.paymentStartDate = paymentStartDate;
+		this.paymentEndDate = paymentEndDate;
+		this.closureDate = closureDate;
+		this.purchaseAmount = purchaseAmount;
+		this.loanTotalCost = loanTotalCost;
+		this.loanDuration = loanDuration;
+		this.vehicleCategory = vehicleCategory;
+		this.loanRate = loanRate;
+	}
+	
+	public Contract(int contractNumber, LocalDate paymentStartDate, LocalDate paymentEndDate,
+			LocalDate closureDate, BigDecimal purchaseAmount, BigDecimal loanTotalCost, int loanDuration,
+			VehicleCategory vehicleCategory, BigDecimal loanRate) {
+		super();
 		this.contractNumber = contractNumber;
 		this.paymentStartDate = paymentStartDate;
 		this.paymentEndDate = paymentEndDate;
@@ -105,27 +120,27 @@ public class Contract {
 		this.contractNumber = contractNumber;
 	}
 
-	public String getPaymentStartDate() {
+	public LocalDate getPaymentStartDate() {
 		return paymentStartDate;
 	}
 
-	public void setPaymentStartDate(String paymentStartDate) {
+	public void setPaymentStartDate(LocalDate paymentStartDate) {
 		this.paymentStartDate = paymentStartDate;
 	}
 
-	public String getPaymentEndDate() {
+	public LocalDate getPaymentEndDate() {
 		return paymentEndDate;
 	}
 
-	public void setPaymentEndDate(String paymentEndDate) {
+	public void setPaymentEndDate(LocalDate paymentEndDate) {
 		this.paymentEndDate = paymentEndDate;
 	}
 
-	public String getClosureDate() {
+	public LocalDate getClosureDate() {
 		return closureDate;
 	}
 
-	public void setClosureDate(String closureDate) {
+	public void setClosureDate(LocalDate closureDate) {
 		this.closureDate = closureDate;
 	}
 
